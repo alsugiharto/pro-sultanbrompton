@@ -130,6 +130,69 @@ var items = [
     "color": "black",
     "year": 2020,
     "link": "electric-black-folded"
+  },
+  {
+    "brand": "Brompton",
+    "edition": "Original",
+    "model": "S6LU",
+    "price": 70000000,
+    "color": "black",
+    "year": 2019,
+    "link": "ori-black-folded"
+  },
+  {
+    "brand": "Brompton",
+    "edition": "Original",
+    "model": "S6LU",
+    "price": 50000000,
+    "color": "black",
+    "year": 2018,
+    "link": "ori-red-folded"
+  },
+  {
+    "brand": "Brompton",
+    "edition": "Original",
+    "model": "S6LU",
+    "price": 60000000,
+    "color": "black",
+    "year": 2017,
+    "link": "ori-green-folded"
+  },
+  {
+    "brand": "Brompton",
+    "edition": "Black Edition",
+    "model": "S6LU",
+    "price": 50000000,
+    "color": "black",
+    "year": 2020,
+    "link": "blackedi-blue-folded"
+  },
+  {
+    "brand": "Brompton",
+    "edition": "Black Edition",
+    "model": "S6LU",
+    "price": 60000000,
+    "color": "black",
+    "year": 2020,
+    "link": "blackedi-green-folded"
+  },
+  {
+    "brand": "Brompton",
+    "edition": "Electric",
+    "model": "S6LU",
+    "price": 60000000,
+    "color": "black",
+    "year": 2019,
+    "link": "electric-white-folded"
+  },
+  {
+    "brand": "Brompton",
+    "edition": "Original",
+    "model": "S6LU",
+    "price": 60000000,
+    "color": "black",
+    "year": 2020,
+    "link": "electric-black-folded"
   }
 ]
 <!-- ========================= ITEMS DATA END ========================= -->
@@ -144,6 +207,11 @@ var item_head = `
 <!-- ========================= ITEMS HEAD END ========================= -->
 
 <!-- ========================= ITEMS LIST ========================= -->
+
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'IDR',
+});
 
 var item_list = '';
 
@@ -175,7 +243,7 @@ $.each (brands, function (ibrand) {
 								'</ul>'+
 								'<span class="label-rating text-muted">' + items[iitems]['year'] + '</span>'+
 							'</div>'+
-							'<div class="price mt-1">Rp. ' + items[iitems]['price'] + '</div> <!-- price-wrap.// -->'+
+							'<div class="price mt-1">' + formatter.format(items[iitems]['price']) + '</div> <!-- price-wrap.// -->'+
 						'</figcaption>'+
 					'</div>';
 				}
@@ -257,7 +325,7 @@ var foot = `
 					</span>
 				</div>
 				<figcaption class="info">
-					<h6 class="title">Customer support 24/7 </h6>
+					<h6 class="title">Customer Support</h6>
 					<p class="text-muted">Telfon atau chat langsung ke +62 811 1132 609 </p>
 				</figcaption>
 			</figure> <!-- iconbox // -->
@@ -270,7 +338,7 @@ var foot = `
 					</span>
 				</div>
 				<figcaption class="info">
-					<h6 class="title">Dikirim dalam 1 - 10 hari</h6>
+					<h6 class="title">Dikirim Dalam 1 - 10 Hari</h6>
 					<p class="text-muted">Pengiriman cepat untuk darah Jabodetabek</p>
 				</figcaption>
 			</figure> <!-- iconbox // -->
@@ -283,13 +351,13 @@ var foot = `
 
 
 <!-- ========================= FOOTER ========================= -->
-<footer class="section-footer border-top">
+<footer class="section-footer border-top center">
 	<div class="container">
 		<section class="footer-top  padding-y">
 			<div class="row">
 				<aside class="col-md-4 col-12">
 					<article class="mr-md-4">
-						<h5 class="title">Hubungi kami langsung</h5>
+						<h5 class="title">Hubungi Kami Langsung</h5>
 						<p>Hubungin kami langsung lewat via telfon atau WhatsApp chat</p>
 						<ul class="list-icon">
 			                <li> <i class="icon fa fa-map-marker"> </i>Bekasi, Indonesia</li>
@@ -298,41 +366,12 @@ var foot = `
 						</ul>
 					</article>
 				</aside>
-				<aside class="col-md col-6">
-					<h5 class="title">Information</h5>
-					<ul class="list-unstyled">
-						<li> <a href="#">About us</a></li>
-						<li> <a href="#">Career</a></li>
-						<li> <a href="#">Find a store</a></li>
-						<li> <a href="#">Rules and terms</a></li>
-						<li> <a href="#">Sitemap</a></li>
-					</ul>
-				</aside>
-				<aside class="col-md col-6">
-					<h5 class="title">My Account</h5>
-					<ul class="list-unstyled">
-						<li> <a href="#">Contact us</a></li>
-						<li> <a href="#">Money refund</a></li>
-						<li> <a href="#">Order status</a></li>
-						<li> <a href="#">Shipping info</a></li>
-						<li> <a href="#">Open dispute</a></li>
-					</ul>
-				</aside>
 				<aside class="col-md-4 col-12">
-					<h5 class="title">Newsletter</h5>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in feugiat lorem. </p>
-
-					<form class="form-inline mb-3">
-						<input type="text" placeholder="Email" class="form-control" name="">
-						<button class="btn ml-2 btn-warning"> Subscribe</button>
-					</form>
-
+					<h5 class="title">Social Media</h5>
 					<p class="text-white-50 mb-2">Follow us on social media</p>
 					<div>
-						<a href="#" class="btn btn-icon btn-light"><i class="fab fa-facebook-f"></i></a>
-						<a href="#" class="btn btn-icon btn-light"><i class="fab fa-twitter"></i></a>
-						<a href="#" class="btn btn-icon btn-light"><i class="fab fa-instagram"></i></a>
-						<a href="#" class="btn btn-icon btn-light"><i class="fab fa-youtube"></i></a>
+						<a href="https://www.facebook.com/Sultanbrompton" class="btn btn-icon btn-light"><i class="fab fa-facebook-f"></i></a>
+						<a href="https://www.instagram.com/sultan.brompton" class="btn btn-icon btn-light"><i class="fab fa-instagram"></i></a>
 					</div>
 
 				</aside>
@@ -342,15 +381,8 @@ var foot = `
 		<section class="footer-bottom border-top row">
 			<div class="col-md-6">
 				<p class="mb-0">
-					<a href="">Terms and Conditions</a> |
-					<a href="">Privacy</a> |
-					<a href="">Cookies</a>
+					Sultan Brompton 2020
 				</p>
-			</div>
-			<div class="col-md-6 text-md-right">
-				<i class="fab fa-lg fa-cc-visa"></i>
-				<i class="fab fa-lg fa-cc-paypal"></i>
-				<i class="fab fa-lg fa-cc-mastercard"></i>
 			</div>
 		</section>
 	</div><!-- //container -->
