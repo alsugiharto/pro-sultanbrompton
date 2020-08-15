@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 class App extends React.Component {
     render(){
@@ -148,7 +147,7 @@ class App extends React.Component {
             <div class="container">
 
             <div class="intro-banner-wrap">
-                <img src="images/banners/bannermain.jpg" class="img-fluid rounded" />
+                <img alt ="Sultan Brompton" src="images/banners/bannermain.jpg" class="img-fluid rounded" />
             </div>
 
             </div> {/* container {/*  */}
@@ -171,20 +170,20 @@ class App extends React.Component {
                                 </header>
                                 <div className="row">
                                 {
-                                    itemsdata.map((itemlist, index) => {
+                                    itemsdata.forEach((itemlist, index) => {
 
-                                        if (itemlist['brand'] == brand){
-                                            if (itemlist['edition'] == model){
+                                        if (itemlist['brand'] === brand){
+                                            if (itemlist['edition'] === model){
 
                                                 return(
                                                     <>
 
-                                                        <div href="#" className="card card-product-grid">
+                                                        <div href="/#" className="card card-product-grid">
                                                             <a href="/productdetails" className="img-wrap">
-                                                                <img src={"images/items/"+itemlist['foto']+".jpg"} />
+                                                                <img src={"images/items/"+itemlist['foto']+".jpg"} alt="item"/>
                                                                 <figcaption className="info-wrap">
-                                                                    <a href="#" className="title">{itemlist['model']} {itemlist['color']}</a>
-                                                                    <a className="text-success"> * {itemlist['condition']} </a>
+                                                                    <a href="/#" className="title">{itemlist['model']} {itemlist['color']}</a>
+                                                                    <a href="/#" className="text-success"> * {itemlist['condition']} </a>
                                                                     <div className="rating-wrap">
                                                                         <ul className="rating-stars">
                                                                             <li className="stars-active">
@@ -243,12 +242,12 @@ class App extends React.Component {
             <div className="row justify-content-center">
                 <div className="col-md-2 col-6">
                     <figure className="box item-logo">
-                        <a href="#"><img src="images/logos/brompton.png"/></a>
+                        <a href="/#"><img src="images/logos/brompton.png" alt="logo"/></a>
                     </figure> {/* item-logo.{/* */}
                 </div> {/* col.{/* */}
                 <div className="col-md-2  col-6">
                     <figure className="box item-logo">
-                        <a href="#"><img src="images/logos/bmw.png" /></a>
+                        <a href="/#"><img src="images/logos/bmw.png" alt="logo" /></a>
                     </figure> {/* item-logo.{/* */}
                 </div> {/* col.{/* */}
             </div> {/* row.{/* */}
