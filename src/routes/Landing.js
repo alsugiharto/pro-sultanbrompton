@@ -1,4 +1,5 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 class App extends React.Component {
     render(){
@@ -177,34 +178,38 @@ class App extends React.Component {
 
                                                 return(
                                                     <>
-                                                        <div href="#" className="card card-product-grid">
-                                                            <a href="#" className="img-wrap"> <img src={"images/items/"+itemlist['foto']+".jpg"} /> </a>
-                                                            <figcaption className="info-wrap">
-                                                                <a href="#" className="title">{itemlist['model']} {itemlist['color']}</a>
-                                                                <a className="text-success"> * {itemlist['condition']} </a>
-                                                                <div className="rating-wrap">
-                                                                    <ul className="rating-stars">
-                                                                        <li className="stars-active">
-                                                                            <i className="fa fa-star"></i>
-                                                                            <i className="fa fa-star"></i>
-                                                                            <i className="fa fa-star"></i>
-                                                                            <i className="fa fa-star"></i>
-                                                                            <i className="fa fa-star"></i>
-                                                                        </li>
-                                                                        <li>
-                                                                            <i className="fa fa-star"></i>
-                                                                            <i className="fa fa-star"></i>
-                                                                            <i className="fa fa-star"></i>
-                                                                            <i className="fa fa-star"></i>
-                                                                            <i className="fa fa-star"></i>
-                                                                        </li>
-                                                                    </ul>
-                                                                    <span className="label-rating text-muted">{itemlist['year']}</span>
 
-                                                                </div>
-                                                                <div className="price mt-1">{formatter.format(itemlist['price'])}</div>
-                                                            </figcaption>
+                                                        <div href="#" className="card card-product-grid">
+                                                            <a href="/productdetails" className="img-wrap">
+                                                                <img src={"images/items/"+itemlist['foto']+".jpg"} />
+                                                                <figcaption className="info-wrap">
+                                                                    <a href="#" className="title">{itemlist['model']} {itemlist['color']}</a>
+                                                                    <a className="text-success"> * {itemlist['condition']} </a>
+                                                                    <div className="rating-wrap">
+                                                                        <ul className="rating-stars">
+                                                                            <li className="stars-active">
+                                                                                <i className="fa fa-star"></i>
+                                                                                <i className="fa fa-star"></i>
+                                                                                <i className="fa fa-star"></i>
+                                                                                <i className="fa fa-star"></i>
+                                                                                <i className="fa fa-star"></i>
+                                                                            </li>
+                                                                            <li>
+                                                                                <i className="fa fa-star"></i>
+                                                                                <i className="fa fa-star"></i>
+                                                                                <i className="fa fa-star"></i>
+                                                                                <i className="fa fa-star"></i>
+                                                                                <i className="fa fa-star"></i>
+                                                                            </li>
+                                                                        </ul>
+                                                                        <span className="label-rating text-muted">{itemlist['year']}</span>
+
+                                                                    </div>
+                                                                    <div className="price mt-1">{formatter.format(itemlist['price'])}</div>
+                                                                </figcaption>
+                                                            </a>
                                                         </div>
+
                                                     </>
                                                 )
                                             }
