@@ -9,7 +9,7 @@
 ### `npm start`
 
 ## Push to production
-### `npm run build`
+### `npm run deploy`
 
 ## How react use GitHub pages
 https://dev.to/yuribenjamin/how-to-deploy-react-app-in-github-pages-2a1f

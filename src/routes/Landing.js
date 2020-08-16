@@ -139,15 +139,14 @@ class App extends React.Component {
 
     return (
     <>
-    <div className="App">
-        <body>
+        <div className="App">
 
             {/* ========================= SECTION INTRO ========================= */}
-            <section class="section-intro padding-y-sm">
-            <div class="container">
+            <section className="section-intro padding-y-sm">
+            <div className="container">
 
-            <div class="intro-banner-wrap">
-                <img alt ="Sultan Brompton" src="images/banners/bannermain.jpg" class="img-fluid rounded" />
+            <div className="intro-banner-wrap">
+                <img alt ="Sultan Brompton" src="images/banners/bannermain.jpg" className="img-fluid rounded" />
             </div>
 
             </div> {/* container {/*  */}
@@ -170,49 +169,46 @@ class App extends React.Component {
                                 </header>
                                 <div className="row">
                                 {
-                                    itemsdata.forEach((itemlist, index) => {
+                                    itemsdata
+                                      .filter(itemlist => itemlist['brand'] === brand)
+                                      .filter(itemlist => itemlist['edition'] === model)
+                                      .map((itemlist, index) => {
 
-                                        if (itemlist['brand'] === brand){
-                                            if (itemlist['edition'] === model){
+                                            return(
+                                                <>
 
-                                                return(
-                                                    <>
-
-                                                        <div href="/#" className="card card-product-grid">
-                                                            <a href="/productdetails" className="img-wrap">
-                                                                <img src={"images/items/"+itemlist['foto']+".jpg"} alt="item"/>
-                                                                <figcaption className="info-wrap">
-                                                                    <a href="/#" className="title">{itemlist['model']} {itemlist['color']}</a>
-                                                                    <a href="/#" className="text-success"> * {itemlist['condition']} </a>
-                                                                    <div className="rating-wrap">
-                                                                        <ul className="rating-stars">
-                                                                            <li className="stars-active">
-                                                                                <i className="fa fa-star"></i>
-                                                                                <i className="fa fa-star"></i>
-                                                                                <i className="fa fa-star"></i>
-                                                                                <i className="fa fa-star"></i>
-                                                                                <i className="fa fa-star"></i>
-                                                                            </li>
-                                                                            <li>
-                                                                                <i className="fa fa-star"></i>
-                                                                                <i className="fa fa-star"></i>
-                                                                                <i className="fa fa-star"></i>
-                                                                                <i className="fa fa-star"></i>
-                                                                                <i className="fa fa-star"></i>
-                                                                            </li>
-                                                                        </ul>
-                                                                        <span className="label-rating text-muted">{itemlist['year']}</span>
-
-                                                                    </div>
-                                                                    <div className="price mt-1">{formatter.format(itemlist['price'])}</div>
-                                                                </figcaption>
-                                                            </a>
+                                                    <div href="/#" className="card card-product-grid">
+                                                        <div href="/productdetails" className="img-wrap">
+                                                            <img src={"images/items/"+itemlist['foto']+".jpg"} alt="item"/>
+                                                            <figcaption className="info-wrap">
+                                                                <a href="/#" className="title">{itemlist['model']} {itemlist['color']}</a>
+                                                                <a href="/#" className="text-success"> * {itemlist['condition']} </a>
+                                                                <div className="rating-wrap">
+                                                                    <ul className="rating-stars">
+                                                                        <li className="stars-active">
+                                                                            <i className="fa fa-star"></i>
+                                                                            <i className="fa fa-star"></i>
+                                                                            <i className="fa fa-star"></i>
+                                                                            <i className="fa fa-star"></i>
+                                                                            <i className="fa fa-star"></i>
+                                                                        </li>
+                                                                        <li>
+                                                                            <i className="fa fa-star"></i>
+                                                                            <i className="fa fa-star"></i>
+                                                                            <i className="fa fa-star"></i>
+                                                                            <i className="fa fa-star"></i>
+                                                                            <i className="fa fa-star"></i>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <span className="label-rating text-muted">{itemlist['year']}</span>
+                                                                </div>
+                                                                <div className="price mt-1">{formatter.format(itemlist['price'])}</div>
+                                                            </figcaption>
                                                         </div>
+                                                    </div>
 
-                                                    </>
-                                                )
-                                            }
-                                        }
+                                                </>
+                                            )
 
                                     })
                                 }
@@ -349,13 +345,13 @@ class App extends React.Component {
                               <img className="d-block w-100" src="images/banners/20.jpg" alt="20 slide"/>
                             </div>
                           </div>
-                          <a class="carousel-control-prev" href="#carousel1_indicator" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
+                          <a className="carousel-control-prev" href="#carousel1_indicator" role="button" data-slide="prev">
+                            <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Previous</span>
                           </a>
-                          <a class="carousel-control-next" href="#carousel1_indicator" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
+                          <a className="carousel-control-next" href="#carousel1_indicator" role="button" data-slide="next">
+                            <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span className="sr-only">Next</span>
                           </a>
                         </div>
                     </aside>
@@ -450,9 +446,7 @@ class App extends React.Component {
                 </div>{/* {/*container */}
             </footer>
             {/* ========================= FOOTER END {/* ========================= */}
-
-        </body>
-    </div>
+        </div>
     </>
     );
   }
